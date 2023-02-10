@@ -6,7 +6,6 @@ import currencyExchange from './currencyExchange';
 function getCurreny(fromCurrency) {
   currencyExchange.getCurreny(fromCurrency)
     .then(function (response) {
-      console.log(response);
       if (response.conversion_rates) {
         printElements(response, fromCurrency);
       } else {
@@ -28,7 +27,7 @@ function printElements(response, fromCurrency) {
 function printError(error, fromCurrency) {
   document.querySelector('#showResponse').innerText = 
   `There was an error accessing data.  Your form of currency: ${fromCurrency}
-  Erorr Code: ${error}.`;
+  -- ${error}.`;
 }
 
 function handleFormSubmission() {
