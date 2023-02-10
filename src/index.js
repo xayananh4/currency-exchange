@@ -27,12 +27,13 @@ function printElements(response, fromCurrency) {
 
 function printError(error, fromCurrency) {
   document.querySelector('#showResponse').innerText = 
-  `There was an error accessing the Currency data for: ${fromCurrency} ${error}.`;
+  `There was an error accessing data.  Your form of currency: ${fromCurrency}
+  Erorr Code: ${error}.`;
 }
 
 function handleFormSubmission() {
-  const fromCurrency = document.getElementById("from").value;
-  getCurreny(fromCurrency);
+  // const fromCurrency = document.getElementById("from").value;
+  getCurreny('Wakandan');
 }
 
 window.addEventListener("load", function () {
