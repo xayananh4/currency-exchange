@@ -36,8 +36,7 @@ function handleFormSubmission() {
 }
 
 window.addEventListener("load", function () {
-  let form = document.querySelector("form");
-  form.addEventListener("submit", function (event) {
+  document.querySelector("form").addEventListener("submit", function (event) {
     handleFormSubmission();
     event.preventDefault();
   });
