@@ -18,7 +18,6 @@ module.exports = {
   },
   plugins: [
     new ESLintPlugin(),
-
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Currency Converter',
