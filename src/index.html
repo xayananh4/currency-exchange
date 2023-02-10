@@ -5,20 +5,33 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Document</title>
+  <title>Currency Converter</title>
 </head>
 
 <body>
-  <div id="header-div">
-    <form>
-      <label>Enter in a City</label>
-      <input id=location>
-      <button type="submit" id="btnSubmit">fdsffddf</button>
-    </form>
-    <ul id="show-response">
-
-    </ul>
-  </div>
+   <h1>Currency Converter</h1>
+   <p> Select Currency and enter Amount to convert.</p>
+   <form>
+      <label>From:</label>
+      <select id="from">
+         <option value="USD">US Dollar</option>
+         <option value="EUR">Euro</option>
+         <option value="GBP">British Pound</option>
+         <option value="INR">Indian Rupee</option>
+         <option value="AFN">Afghanistan</option>
+      </select>
+      <label>To:</label>
+      <select id="to">
+         <option value="USD">US Dollar</option>
+         <option value="EUR">Euro</option>
+         <option value="GBP">British Pound</option>
+         <option value="INR">Indian Rupee</option>
+         <option value="AFN">Afghanistan</option>
+      </select>
+      <label>Amount:</label>
+      <input type="text" id="amount" />
+      <button type="button" id="convert">Convert</button>
+      <p id="result"></p>
+   </form>
 </body>
-
 </html>
