@@ -5,12 +5,18 @@ import currencyExchange from './currencyExchange';
 
 function getCurreny(fromCurrency) {
   currencyExchange.getCurreny(fromCurrency)
-    .then(function(response) {     
-      if (response.conversion_rates) {
+    .then(function(response) {    
+      console.log(response); 
+
+      if(response['error-type'] === "unsupported-code") {
+        printCurrencyDoesNotExistError();    
+      }
+      else if (response.conversion_rates) {
         printElements(response, fromCurrency);
       }
-      else if(response['error-type'] === "unsupported-code") {
-        printCurrencyDoesNotExistError();    
+      else{
+        console.log(response); 
+        printError(response);
       }
     });
 }
@@ -26,10 +32,10 @@ function printElements(response, fromCurrency) {
             ${toCurrency}`;
 }
 
-// function printError(error) {
-//   document.querySelector('#showResponse').innerText = 
-//   `There was an error accessing data. ${error}.`;
-// }
+function printError(error) {
+  document.querySelector('#showResponse').innerText = 
+  `There was an error trying to accessing exchangerate-api.com. ${error}`;
+}
 
 function printCurrencyDoesNotExistError() {
   document.querySelector('#showResponse').innerText = 
