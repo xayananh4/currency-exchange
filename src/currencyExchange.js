@@ -4,8 +4,7 @@ export default class currencyExchange {
 
     return fetch(`https://v6.exchangerate-api.com/v6/${process.env.API_KEY}/latest/${fromCurrency}`)
       .then(function (response) {
-        if(response.status === 404)
-        {
+        if(response.status === 404){
           return response.json();
         }      
         else if (!response.ok) {      

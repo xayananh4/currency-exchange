@@ -6,8 +6,6 @@ import currencyExchange from './currencyExchange';
 function getCurreny(fromCurrency) {
   currencyExchange.getCurreny(fromCurrency)
     .then(function(response) {    
-      console.log(response); 
-
       if(response['error-type'] === "unsupported-code") {
         printCurrencyDoesNotExistError();    
       }
@@ -15,7 +13,6 @@ function getCurreny(fromCurrency) {
         printElements(response, fromCurrency);
       }
       else{
-        console.log(response); 
         printError(response);
       }
     });
@@ -39,12 +36,13 @@ function printError(error) {
 
 function printCurrencyDoesNotExistError() {
   document.querySelector('#showResponse').innerText = 
-  'Sorry that currency does not yet exist in our app. Our team working really hard on it. Please check back later!';
+  'Sorry that currency does not yet exist. Our team working really hard on it. Please check back later!';
 
 }
 
 function handleFormSubmission() {
   const fromCurrency = document.getElementById("from").value;
+  console.log(fromCurrency);
   getCurreny(fromCurrency);
 }
 
