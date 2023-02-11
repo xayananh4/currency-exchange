@@ -5,16 +5,12 @@ import currencyExchange from './currencyExchange';
 
 function getCurreny(fromCurrency) {
   currencyExchange.getCurreny(fromCurrency)
-    .then(function (response) {
+    .then(function(response) {     
       if (response.conversion_rates) {
-        console.log("hello");
         printElements(response, fromCurrency);
       }
-      else if (response.errortype === undefined) {
-        printCurrencyDoesNotExistError();
-      }  
-      else {
-        printError(response);
+      else if(response['error-type'] === "unsupported-code") {
+        printCurrencyDoesNotExistError();    
       }
     });
 }
@@ -30,15 +26,14 @@ function printElements(response, fromCurrency) {
             ${toCurrency}`;
 }
 
-function printError(error, fromCurrency) {
-  document.querySelector('#showResponse').innerText = 
-  `There was an error accessing data.  Your form of currency: ${fromCurrency}
-  -- ${error}.`;
-}
+// function printError(error) {
+//   document.querySelector('#showResponse').innerText = 
+//   `There was an error accessing data. ${error}.`;
+// }
 
 function printCurrencyDoesNotExistError() {
   document.querySelector('#showResponse').innerText = 
-  'Sorry that current does not yet exist in our app. Our team working really hard on it. Please check back!';
+  'Sorry that currency does not yet exist in our app. Our team working really hard on it. Please check back later!';
 
 }
 
