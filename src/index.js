@@ -41,9 +41,8 @@ function printCurrencyDoesNotExistError() {
 }
 
 function handleFormSubmission() {
-  const fromCurrency = document.getElementById("from").value;
-  console.log(fromCurrency);
-  getCurreny(fromCurrency);
+  const toCurrency = document.getElementById("to").value;
+  getCurreny(toCurrency);
 }
 
 window.addEventListener("load", function () {
