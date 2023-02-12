@@ -1,10 +1,10 @@
 # Currency Exchanger
 
 Names of contributors: By Viradeth Xay-ananh.  
-A web site that allow user to view exchange rates from USD, EUR, GBP, INR, AFN currency.
+A web site that allow user to view exchange rates from Euro, British Pound, Indian Rupee, Afghanistan,Dubai.
 
 # Description 
-This website will let user choose from 5 different currencies and view the different rates between two chosen currency.  
+This website will let user convert from USD TO: Euro, British Pound, Indian Rupee, Afghanistan,Dubai. And view the rates for the chosen currency.  
 
 ## Technologies Used
 * HTML
