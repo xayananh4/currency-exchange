@@ -1,10 +1,10 @@
 # Currency Exchanger
 
 Names of contributors: By Viradeth Xay-ananh.  
-A web site that allow user to view exchange rates from Euro, British Pound, Indian Rupee, Afghanistan,Dubai.
+A web site that allow user to view exchange rates from United States Dollar TO: Euro, British Pound, Indian Rupee, Afghanistan and Dubai.
 
 # Description 
-This website will let user convert from USD TO: Euro, British Pound, Indian Rupee, Afghanistan,Dubai. And view the rates for the chosen currency.  
+This website will let user convert from USD TO: Euro, British Pound, Indian Rupee, Afghanistan and Dubai. The final rates is display to user for the chosen currency they select.  
 
 ## Technologies Used
 * HTML
