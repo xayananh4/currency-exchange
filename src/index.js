@@ -17,7 +17,6 @@ function getCurreny(toCurrency) {
 
 function printElements(response, toCurrency) {
   const result = document.getElementById("result");
-  // const converted_amount = document.getElementById("to").value;
   const amt = document.getElementById("amount").value;
 
   let rate = response.conversion_rates[toCurrency];
@@ -25,8 +24,10 @@ function printElements(response, toCurrency) {
     let total = rate * amt;
     result.innerHTML = `${amt} ${'USD'} = ${total}
             ${toCurrency}`;
+    printCurrencyMessage('');
   } else {
-    printCurrencyDoesNotExistError();
+    const message = 'Sorry that currency does not yet exist. Our team working really hard on it. Please check back later!';
+    printCurrencyMessage(message);
   }
 }
 
@@ -35,9 +36,8 @@ function printError(error) {
     `There was an error trying to accessing exchangerate-api.com. ${error}`;
 }
 
-function printCurrencyDoesNotExistError() {
-  document.querySelector('#showResponse').innerText =
-    'Sorry that currency does not yet exist. Our team working really hard on it. Please check back later!';
+function printCurrencyMessage(message) {
+  document.querySelector('#showResponse').innerText = message;
 
 }
 
