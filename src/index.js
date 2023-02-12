@@ -34,7 +34,7 @@ function printElements(response, toCurrency) {
 
 function printError(error) {
   document.querySelector('#showResponse').innerText =
-    `There was an error trying to accessing exchangerate-api.com. ${error}`;
+    `There was an error trying to accessing Exchangerate-API: ${error}`;
 }
 
 function printCurrencyMessage(message) {

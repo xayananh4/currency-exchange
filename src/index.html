@@ -1,29 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Currency Converter</title>
+   <meta charset="UTF-8" />
+   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Currency Converter</title>
 </head>
+
 <body>
    <h1>Currency Converter</h1>
    <p> Select Currency and enter Amount to convert.</p>
    <form>
-      <label>Amount in USD:</label>
+      <label>Enter In Amount:</label>
       <input type="number" id="amount" />
-      <label>To:</label>
-      <select id="to">
+      <label>From:</label>
+      <select id="from">
+         <option value="USD">USD</option>
          <option value="EUR">Euro</option>
          <option value="GBP">British Pound</option>
-         <option value="INR">Indian Rupee</option>    
+         <option value="INR">Indian Rupee</option>
          <option value="AFN">Afghanistan</option>
          <option value="AED">Dubai</option>
-         <option value="Wakandan-Dollar">Wakandan Dollar</option>       
+         <option value="Wakandan-Dollar">Wakandan Dollar</option>
+      </select>
+      <label>To:</label>
+      <select id="to">
+         <option value="USD">USD</option>
+         <option value="EUR">Euro</option>
+         <option value="GBP">British Pound</option>
+         <option value="INR">Indian Rupee</option>
+         <option value="AFN">Afghanistan</option>
+         <option value="AED">Dubai</option>
+         <option value="Wakandan-Dollar">Wakandan Dollar</option>
       </select>
       <button type="submit">Convert</button>
       <p id="result"></p>
       <p id="showResponse"></p>
    </form>
 </body>
+
 </html>
