@@ -22,7 +22,7 @@ function printElements(response, toCurrency) {
   let rate = response.conversion_rates[toCurrency];
   if (rate) {
     let total = rate * amt;
-    result.innerHTML = `${amt} ${'USD'} = ${total}
+    result.innerHTML = `${amt} ${'USD'} = ${total.toFixed(2)}
             ${toCurrency}`;
     printCurrencyMessage('');
   } else {
