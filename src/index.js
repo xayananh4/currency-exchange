@@ -3,40 +3,41 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import currencyExchange from './currencyExchange';
 
-function getCurreny(fromCurrency) {
-  currencyExchange.getCurreny(fromCurrency)
-    .then(function(response) {    
-      if(response['error-type'] === "unsupported-code") {
-        printCurrencyDoesNotExistError();    
+function getCurreny(toCurrency) {
+  currencyExchange.getCurreny()
+    .then(function (response) {
+      if (response.conversion_rates) {
+        printElements(response, toCurrency);
       }
-      else if (response.conversion_rates) {
-        printElements(response, fromCurrency);
-      }
-      else{
+      else {
         printError(response);
       }
     });
 }
 
-function printElements(response, fromCurrency) {
+function printElements(response, toCurrency) {
   const result = document.getElementById("result");
-  const toCurrency = document.getElementById("to").value;
+  // const converted_amount = document.getElementById("to").value;
   const amt = document.getElementById("amount").value;
-  
+
   let rate = response.conversion_rates[toCurrency];
-  let total = rate * amt;
-  result.innerHTML = `${amt} ${fromCurrency} = ${total}
+  if (rate) {
+    let total = rate * amt;
+    result.innerHTML = `${amt} ${'USD'} = ${total}
             ${toCurrency}`;
+  } else {
+    printCurrencyDoesNotExistError();
+  }
 }
 
 function printError(error) {
-  document.querySelector('#showResponse').innerText = 
-  `There was an error trying to accessing exchangerate-api.com. ${error}`;
+  document.querySelector('#showResponse').innerText =
+    `There was an error trying to accessing exchangerate-api.com. ${error}`;
 }
 
 function printCurrencyDoesNotExistError() {
-  document.querySelector('#showResponse').innerText = 
-  'Sorry that currency does not yet exist. Our team working really hard on it. Please check back later!';
+  document.querySelector('#showResponse').innerText =
+    'Sorry that currency does not yet exist. Our team working really hard on it. Please check back later!';
 
 }
 
