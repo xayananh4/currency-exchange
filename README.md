@@ -13,8 +13,8 @@ This website will let user convert from USD TO: Euro, British Pound, Indian Rupe
 * Git
 * Bootstrap
 * Javascript
-*  Node Package Manager
-*  Webpack
+* Node Package Manager
+* Webpack
 
 # Complete setup/Installation instructions:
 Clone repository to desktop   
