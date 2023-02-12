@@ -3,11 +3,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 import currencyExchange from './currencyExchange';
 
-function getCurreny(toCurrency) {
-  currencyExchange.getCurreny()
+function getCurreny(fromCurrency) {
+  currencyExchange.getCurreny(fromCurrency)
     .then(function (response) {
       if (response.conversion_rates) {
-        printElements(response, toCurrency);
+        printElements(response, fromCurrency);
       }
       else {
         printError(response);
@@ -15,14 +15,15 @@ function getCurreny(toCurrency) {
     });
 }
 
-function printElements(response, toCurrency) {
+function printElements(response, fromCurrency) {
   const result = document.getElementById("result");
   const amt = document.getElementById("amount").value;
+  const toCurrency = document.getElementById("to").value;
 
   let rate = response.conversion_rates[toCurrency];
   if (rate) {
     let total = rate * amt;
-    result.innerHTML = `${amt} ${'USD'} = ${total.toFixed(2)}
+    result.innerHTML = `${amt} ${fromCurrency} = ${total.toFixed(2)}
             ${toCurrency}`;
     printCurrencyMessage('');
   } else {
@@ -43,8 +44,8 @@ function printCurrencyMessage(message) {
 }
 
 function handleFormSubmission() {
-  const toCurrency = document.getElementById("to").value;
-  getCurreny(toCurrency);
+  const fromCurrency = document.getElementById("from").value;
+  getCurreny(fromCurrency);
 }
 
 window.addEventListener("load", function () {
