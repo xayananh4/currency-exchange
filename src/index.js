@@ -26,6 +26,7 @@ function printElements(response, toCurrency) {
             ${toCurrency}`;
     printCurrencyMessage('');
   } else {
+    result.innerHTML = '';
     const message = 'Sorry that currency does not yet exist. Our team working really hard on it. Please check back later!';
     printCurrencyMessage(message);
   }
