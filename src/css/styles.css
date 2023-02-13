@@ -1,3 +1,7 @@
 body {
   background-color: cornsilk;
 }
+
+.defaultHidden {
+  display: none;
+}
