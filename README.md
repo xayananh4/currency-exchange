@@ -17,10 +17,14 @@ This website will let user convert from USD TO: Euro, British Pound, Indian Rupe
 * Webpack
 
 # Complete setup/Installation instructions:
-Clone repository to desktop   
-Navigate to exchange folder, open index.html 
-npm run start
-[Currency Exchanger](https://xayananh4.github.io/currency-exchange/)   
+Clone repository to your desktop
+Go to the top level of the directory
+Install all packages with npm install and npm run build
+Go to: https://www.exchangerate-api.com/.  Enter your email and get a free  API key from the website.
+Create a file named .env at the top level of the project directory.
+In the .env file, add "API_KEY={YOUR API KEY}”
+{YOUR API KEY} is the key you get from exchangerate-api.com
+Run command: npm run start to view/test web application.
 
 
 # Known bugs: 
